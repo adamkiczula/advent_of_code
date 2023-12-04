@@ -1,4 +1,4 @@
-require_relative '../solution'
+require_relative '../solution_base'
 
 class Solution < SolutionBase
   SAMPLE_INPUT = <<~SAMPLE
