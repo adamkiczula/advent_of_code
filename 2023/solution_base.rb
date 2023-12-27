@@ -1,8 +1,11 @@
 class SolutionBase
   def self.run(directory)
     solution = new(directory)
-    puts "Sample Passed: #{solution.check_sample}"
-    puts "Answer: #{solution.answer}"
+    puts "Running sample..."
+    solution.check_sample
+    puts "Running..."
+    answer = solution.answer
+    puts "Answer: #{answer}" if answer
   end
 
   def initialize(directory)
@@ -14,7 +17,9 @@ class SolutionBase
   end
 
   def check_sample
-    algorithm(self.class::SAMPLE_INPUT.split("\n")) == self.class::SAMPLE_ANSWER
+    sample_answer = algorithm(self.class::SAMPLE_INPUT.split("\n"))
+    passed = sample_answer == self.class::SAMPLE_ANSWER
+    puts "Sample Answer: #{passed}" if sample_answer
   end
 
   private
